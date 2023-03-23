@@ -44,7 +44,7 @@ function ForgotPassword() {
       <div className={classes.login}>
         {" "}
         {error && <p className={classes.error}> {error} </p>}{" "}
-        {message && <p className={classes.success}> {message} </p>}
+        {message && <p className={classes.success}> {message} </p>}{" "}
         <form onSubmit={submitHandler}>
           <div
             className={`${classes.control} ${
@@ -66,14 +66,14 @@ function ForgotPassword() {
               className={classes.btn}
               disabled={!emailIsValid || loading}
             >
-              Reset Password
+              Reset Password{" "}
             </Button>{" "}
           </div>{" "}
         </form>{" "}
         <div className={classes.makeAccount}>
           {" "}
           <Link to="/login" className={classes.btn}>
-            Login
+            Login{" "}
           </Link>{" "}
           <h4> Don 't have an acount? </h4>{" "}
           <Link to="/signup" className={classes.btn}>

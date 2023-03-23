@@ -3,8 +3,20 @@ import StartFirebase from "../../firebaseManage";
 import { ref, set, get, update, remove, child } from "firebase/database";
 import classes from "../Cart/Checkout.module.css";
 import Card from "../UI/Card";
+import { Link } from "react-router-dom";
 
-export default class ManageMealClass extends React.Component {
+export default function ManageMeals() {
+  return (
+    <>
+      <ManageMealClass />
+      <div className={classes.back}>
+        <Link to="/admin"> Back </Link>{" "}
+      </div>
+    </>
+  );
+}
+
+class ManageMealClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -98,7 +110,7 @@ export default class ManageMealClass extends React.Component {
               </button>{" "}
             </div>{" "}
           </Card>{" "}
-        </div>
+        </div>{" "}
       </>
     );
   }

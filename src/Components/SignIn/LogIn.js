@@ -38,17 +38,17 @@ function LogIn() {
     navigate("/signup");
   }
 
-  // function forgotPassHandler() {
-  //   setHaveAcount(true);
-  // }
-
   async function submitHandler(event) {
     event.preventDefault();
     try {
       setError(" ");
       setLoading(true);
       await login(enteredEmail, enteredPassword);
-      navigate("/user");
+      if (enteredEmail === "admin@gmail.com" && enteredPassword === "adminnn") {
+        navigate("/admin");
+      } else {
+        navigate("/maharous");
+      }
     } catch {
       setError("Failed to log In");
     }

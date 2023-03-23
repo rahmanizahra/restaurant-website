@@ -8,22 +8,25 @@ export default function Admin() {
   return (
     <>
       <AuthProvider>
-        <p>hello</p>
+        <p> hello </p>{" "}
         <header className={classes.header}>
           <h2> Hello {currentUser && currentUser.email} </h2>{" "}
         </header>{" "}
-      </AuthProvider>
+      </AuthProvider>{" "}
       <div className={classes.mainContainer}>
-        <h2 className={classes.head}>Meals Management</h2>
+        <h2 className={classes.head}> Meals Management </h2>{" "}
         <ul>
           <li>
-            <Link to="/manage-meal">Manage existing meals</Link>
-          </li>
+            <Link to="/manage-meal"> Manage Meals </Link>{" "}
+          </li>{" "}
           <li>
-            <Link to="/add-meal">Add a new meal</Link>
-          </li>
-        </ul>
-      </div>
+            <Link to="/add-meal"> Manage Users </Link>{" "}
+          </li>{" "}
+          <li>
+            <Link to="/maharous"> Go to the main page </Link>{" "}
+          </li>{" "}
+        </ul>{" "}
+      </div>{" "}
     </>
   );
 }

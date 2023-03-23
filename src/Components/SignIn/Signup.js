@@ -53,7 +53,7 @@ function Signup() {
       setError(" ");
       setLoading(true);
       await signup(enteredEmail, enteredPassword);
-      navigate("/user");
+      navigate("/maharous");
     } catch {
       setError("Failed to Sign up");
     }
