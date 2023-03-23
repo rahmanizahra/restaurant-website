@@ -1,11 +1,14 @@
 import React from "react";
-import LogIn from "../Components/UI/LogIn";
+import LogIn from "../Components/SignIn/LogIn";
+import { AuthProvider } from "../store/AuthContext";
 
 function LogInPage() {
   return (
-    <div>
-      <LogIn />
-    </div>
+    <AuthProvider>
+      <div>
+        <LogIn />
+      </div>{" "}
+    </AuthProvider>
   );
 }
 

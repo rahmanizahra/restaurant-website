@@ -16,27 +16,6 @@ function HomePage() {
       <div className={classes.container}>
         <img className={classes.food} src={food} alt=" food" />
         <h2 className={classes.centered}>We are open </h2>
-
-        {/* <div>
-          <h1 className={classes.status}>please select your status</h1>
-        </div>
-        <br />
-        <div className={classes.linkContainer}>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/user" activeClassName={classes.active}>
-                  User
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin" activeClassName={classes.active}>
-                  Admin
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div> */}
       </div>
 
       <Footer />

@@ -73,34 +73,35 @@ function Cart(props) {
 
   const cartModalContent = (
     <>
-      {cartItems}
+      {cartItems}{" "}
       <div className={classes.total}>
         <span> Total Amount </span> <span> {totalAmount} </span>{" "}
-      </div>
+      </div>{" "}
       {isOrdered && (
         <Checkout onCancel={props.onClose} onConfirm={submitOrderHandler} />
-      )}
-      {!isOrdered && modalActions}
+      )}{" "}
+      {!isOrdered && modalActions}{" "}
     </>
   );
-  const isSubmittingModalContent = <p>Sending ordered data ...</p>;
+  const isSubmittingModalContent = <p> Sending ordered data... </p>;
 
   const didSubmitModalContent = (
     <>
-      <p>Successfully sent the order!</p>
+      <p> Successfully sent the order! </p>{" "}
       <div className={classes.actions}>
         <button className={classes.button} onClick={props.onClose}>
-          Close
-        </button>
-      </div>
+          Close{" "}
+        </button>{" "}
+      </div>{" "}
     </>
   );
 
   return (
     <Modal onClose={props.onClose}>
+      {" "}
       {!isSubmitting && !didSubmit && cartModalContent}{" "}
-      {isSubmitting && isSubmittingModalContent}
-      {!isSubmitting && didSubmit && didSubmitModalContent}
+      {isSubmitting && isSubmittingModalContent}{" "}
+      {!isSubmitting && didSubmit && didSubmitModalContent}{" "}
     </Modal>
   );
 }

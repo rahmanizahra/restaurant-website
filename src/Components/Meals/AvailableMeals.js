@@ -3,6 +3,7 @@ import classes from "./AvailableMeals.module.css";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 import { useEffect, useState } from "react";
+
 function AvailableMeals() {
   const [availableMeals, setAvailableMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +24,7 @@ function AvailableMeals() {
         for (const key in data) {
           loadedMeals.push({
             id: key,
-            name: data[key].name,
+            title: data[key].title,
             description: data[key].description,
             price: data[key].price,
           });
@@ -39,14 +40,14 @@ function AvailableMeals() {
   if (isLoading) {
     return (
       <section>
-        <p className={classes.mealsLoading}>Loading ...</p>
+        <p className={classes.mealsLoading}> Loading... </p>{" "}
       </section>
     );
   }
   if (hasError) {
     return (
       <section>
-        <p className={classes.mealsError}>{hasError}</p>
+        <p className={classes.mealsError}> {hasError} </p>{" "}
       </section>
     );
   }
@@ -54,7 +55,7 @@ function AvailableMeals() {
     <MealItem
       key={meal.id}
       id={meal.id}
-      name={meal.name}
+      title={meal.title}
       description={meal.description}
       price={meal.price}
     />
@@ -62,8 +63,8 @@ function AvailableMeals() {
   return (
     <section className={classes.meals}>
       <Card>
-        <ul>{mealsList}</ul>
-      </Card>
+        <ul> {mealsList} </ul>{" "}
+      </Card>{" "}
     </section>
   );
 }

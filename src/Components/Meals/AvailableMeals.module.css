@@ -33,3 +33,15 @@
         transform: translateY(0);
     }
 }
+
+.flex {
+    padding: 1rem;
+}
+
+.btn {
+    margin: 0.5rem;
+    background-color: rgb(76, 173, 76);
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}

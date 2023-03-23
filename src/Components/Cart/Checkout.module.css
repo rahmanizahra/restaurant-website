@@ -62,3 +62,14 @@
     border-color: #aa0b20;
     background-color: #ffeff1;
 }
+
+.invalid {
+    color: #ca3e51;
+}
+
+.container {
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+    animation: meals-appear 1s ease-out forwards;
+}

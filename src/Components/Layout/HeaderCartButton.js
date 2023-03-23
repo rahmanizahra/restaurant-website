@@ -3,16 +3,24 @@ import CartIcon from "../Cart/CartIcon";
 import classes from "./HeaderCartButton.module.css";
 import CartContext from "../../store/cart-context";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../store/AuthContext";
 
 export default function HeaderCartButton(props) {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
   const navigate = useNavigate();
-  // const [isClicked, setIsClicked] = useState(false);
+  const [error, setError] = useState("");
   const cartCtx = useContext(CartContext);
   const { items } = cartCtx;
+  const { logout } = useAuth();
 
-  function logoutHandler() {
-    navigate("/");
+  async function logoutHandler() {
+    setError("");
+    try {
+      await logout();
+      navigate("/login");
+    } catch {
+      setError("Failed to log out");
+    }
   }
   const numberOfCartItems = items.reduce((curNumber, item) => {
     return curNumber + item.amount;
@@ -35,16 +43,19 @@ export default function HeaderCartButton(props) {
     };
   }, [items]);
   return (
-    <button className={btnClasses} onClick={props.onClick}>
-      <span className={classes.icon}>
-        <CartIcon />
-      </span>
-      <span>Your Cart</span>
-      <span className={classes.badge}>{numberOfCartItems}</span>
-      <span className={classes.badge} onClick={logoutHandler}>
-        {" "}
-        Logout
-      </span>
-    </button>
+    <>
+      <button className={btnClasses} onClick={props.onClick}>
+        <span className={classes.icon}>
+          <CartIcon />
+        </span>{" "}
+        <span> Your Cart </span>{" "}
+        <span className={classes.badge}> {numberOfCartItems} </span>{" "}
+        <span className={classes.badge} onClick={logoutHandler}>
+          {" "}
+          Log out{" "}
+        </span>{" "}
+      </button>
+      {error && error}
+    </>
   );
 }

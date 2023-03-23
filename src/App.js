@@ -1,33 +1,14 @@
-// import React, { useState } from "react";
-// import Header from "./Components/Layout/Header";
-// import Cart from "./Components/Cart/Cart";
-// import Meals from "./Components/Meals/Meals";
-// import CartProvider from "./store/CartProvider";
-// import react from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import LogInPage from "./pages/LogInPage";
 import Users from "./pages/Users";
+import SignupPage from "./pages/SignupPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import AdminPage from "./pages/AdminPage";
+import ExictingMeals from "./Components/Admin/ExictingMeals";
+import ManageMealClass from "./Components/Admin/ManageMealClass";
 
 function App() {
-  // const [cartIsShown, setCartIsShown] = useState(false);
-
-  // function showCartHandler() {
-  //     setCartIsShown(true);
-  // }
-
-  // function hideCartHandler() {
-  //     setCartIsShown(false);
-  // }
-
-  /* // <CartProvider>
-              //   {cartIsShown && <Cart onClose={hideCartHandler} />}
-              //   <Header onShowCart={showCartHandler} />
-              //   <main>
-              //     <Meals />
-              //   </main>
-              // </CartProvider> */
-
   return (
     <Routes>
       <Route path="/" element={<Home />}>
@@ -36,7 +17,11 @@ function App() {
       <Route path="/login" element={<LogInPage />}>
         {" "}
       </Route>{" "}
-      <Route path="/user" element={<Users />} />
+      <Route path="/user" element={<Users />} />{" "}
+      <Route path="/signup" element={<SignupPage />} />{" "}
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />{" "}
+      <Route path="/admin" element={<AdminPage />} />{" "}
+      <Route path="/manage-meal" element={<ManageMealClass />} />{" "}
     </Routes>
   );
 }
